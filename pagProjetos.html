@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="pagProjetos.css">
+    <script src="https://kit.fontawesome.com/ebc21972aa.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projetos - Portfólio Ruan Mesquita</title>
+</head>
+<body onload="loadFunction()">
+    <header>
+        <h2>
+            Desenvolvimento 
+            Web
+        </h2>
+        <ul>
+            <li>
+                <a href="">Home</a>
+            </li>
+            <li>
+                <a href="">Sobre Mim</a>
+            </li>
+            <li>
+                <a href="">Contato</a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <h1> Tipos de Projetos</h1>
+       <div id="projects--container">
+           <section class="project--card first--card">
+               <span>Clique Aqui</span>
+           </section>
+            <section class="project--card">
+                <h4>Animações CSS</h4>
+                <div class="img--container">
+                    <img src="fotoRuan.jpeg" alt="">
+                </div>
+                
+                <p>
+                        Aqui você encontrará alguns exemplos de Animações
+                        realizadas apenas utilizando CSS, sem o auxílio
+                        da linguagem Javascript para criar os efeitos.
+                        
+                </p> <br>
+                <a href="">teste</a>
+            </section>
+            <section class="project--card">
+                <h4>Design de sites</h4>
+                <div class="img--container"> 
+                    <img src="fotoRuan.jpeg" alt="">
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur odit maxime dignissimos vero animi rem, optio nemo odio soluta delectus neque recusandae amet nam, maiores officia a perspiciatis iste ex.
+                Cumque commodi ullam alias ducimus modi dolores totam itaque eveniet, reiciendis natus obcaecati culpa, 
+                quas voluptatem laboriosam. Cum quibusdam culpa hic consectetur praesentium, cupiditate beatae aspernatur 
+                voluptas nisi. Minus, ullam.
+                </p>
+
+                <a href="">teste</a>
+            </section>
+            <section class="project--card">
+                <h4>Aplicações Web</h4>
+                <div class="img--container">
+                    <img src="fotoRuan.jpeg" alt="">
+                </div>
+                <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur odit maxime dignissimos vero animi rem, optio nemo odio soluta delectus neque recusandae amet nam, maiores officia a perspiciatis iste ex.
+                    Cumque commodi ullam alias ducimus modi dolores totam itaque eveniet, reiciendis natus obcaecati culpa, 
+                    quas voluptatem laboriosam. Cum quibusdam culpa hic consectetur praesentium, cupiditate beatae aspernatur 
+                    voluptas nisi. Minus, ullam.
+                </p>
+                <a href="">teste</a>
+            </section>
+       </div>
+    </main>
+ 
+    <footer>
+        
+    </footer>
+    <script>
+        $(function(){
+            $(".first--card").click(function(){
+                $(".first--card").animate({
+                    opacity: "0",
+                    display: "none"
+                    
+                })
+            }) 
+            
+        })
+
+    </script>
+</body>
+</html>

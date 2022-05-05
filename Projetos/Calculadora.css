@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.Transition {
+    opacity: 1;
+    transition: 1.5s;
+}
+
+body {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 100vh;
+    padding-top: 50px;
+    opacity: 0;
+    text-align: center;
+
+
+}
+
+.display {
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #80d18b;
+    padding: 10px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.displayMode {
+    background-color: #110E14;
+    padding: 15px;
+    position: relative;
+    top: 0px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+    /* border: 5px solid red; */
+    align-items: center;
+    width: 190px;
+    height: 50px;
+    margin: 0 auto;
+    color: rgb(219, 218, 222);
+    font-size: 15px;
+
+
+}
+
+.displayMode:nth-child(1):hover {
+    opacity: 1
+}
+
+.displayMode--Default--darkMode {
+    position: absolute;
+    border-radius: 15px;
+    left: 0px;
+    box-shadow: 2px 2px 2px black;
+    background-color: #322B41;
+    height: 105%;
+    width: 50%;
+    text-align: center;
+    line-height: 48px;
+    opacity: 0;
+
+
+
+}
+
+/* .displayMode--Default--darkMode:hover {
+    box-shadow: 0 0 0 transparent;
+    background-color: transparent;
+    opacity:1;
+} */
+
+.displayMode--Default--lightMode {
+    position: absolute;
+    border-radius: 15px;
+    right: 0px;
+    box-shadow: 2px 2px 2px black;
+    background-color: #322B41;
+    height: 105%;
+    width: 50%;
+    text-align: center;
+    line-height: 48px;
+}
+
+
+/* .displayMode--Default {
+    position:absolute;
+    border-radius: 15px;
+    right: 0px;
+    box-shadow: 2px 2px 2px black;
+    background-color: #322B41;
+    height: 105%;
+    width: 50%;
+    text-align: center;
+    line-height: 48px;
+} */
+
+
+
+
+.displayMode span:hover {
+    cursor: pointer;
+}
+
+.darkMode {
+    background-color: #2e2d30;
+    transition: 0.5s;
+}
+
+.darkMode span {
+    color: white;
+}
+
+.calculator {
+    box-shadow: 0 5px 15px 0 black;
+    padding: 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 90px;
+
+}
+
+#numbers {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+#numbers input {
+    font-size: 15px;
+    width: 100%;
+    height: 20px;
+    border-radius: 15px;
+    
+}
+
+
+
+#numbers input {
+    width: 100px;
+    height: 50px;
+}
+
+.equalButton {
+    background-color: rgb(190, 6, 6);
+    color: white;
+    position: relative;
+}
+
+.equalButton::after {
+    content:'';
+    position:absolute;
+    border: 5px solid yellow;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(165, 6, 6)
+}

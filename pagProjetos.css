@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #F8F7FD;
+    font-family: 'Roboto Mono', monospace;
+    /* font-weight: bold; */
+    list-style-type: none;
+    text-decoration: none;
+    /* border: 2px solid red; */
+}
+
+
+
+body {
+    /* margin: 35px; */
+    background-image: linear-gradient(-45deg ,#232A34, black);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: 1s;
+    /* opacity: 0;        */
+}
+
+
+
+.loadTransition {
+    opacity: 1
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    background-color: #F8F7FD;
+    opacity: .3;
+}
+
+header h2 {
+    text-align: left;
+    width: 100px;
+    height: 50px;
+    /* border: 2px solid red; */
+}
+
+header ul {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+header ul li {
+    margin-left: 10px;
+    list-style: none;
+}
+
+ a {
+    position: relative;
+}
+
+ a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #F8F7FD;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+} 
+
+ a:hover::before {
+    opacity: 1;
+}
+
+
+main {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: 100px;
+    /* max-height: 500px; */
+    /* border: 2px solid red; */
+}
+
+main h3 {
+    margin-bottom: 20px;
+}
+
+#projects--container {
+   position: relative;
+   margin-top: 20px;
+   display: flex;
+   height: 500px;
+   width: 100%;
+   justify-content: space-between;
+   
+}
+
+
+
+.project--card {
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 0px 20px black;
+    width: 400px;
+    min-height: 300px;
+    font-size: .9em;
+    display: none;
+    
+    
+}
+
+.first--card{
+    margin: 0 auto;
+    display: block;   
+    transition: .5s;
+}
+
+.first--card span {
+    display: inline-block ;
+    line-height: 440px;
+    font-size: 2em;
+    
+}
+
+.first--card:hover {
+    cursor: pointer;
+    background-color: #F8F7FD;
+    
+    
+}
+
+.first--card:hover span{
+    color: #232A34;
+}
+
+.project--card a {
+    border-radius: 20px;
+
+}
+
+
+
+.img--container img {
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+
+}
+
+
+
+.project--card  p {
+    border: 2px solid red;
+    height: 200px;
+    text-align: center;
+    line-height: 20px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.project--card h4 {
+    margin-bottom: 10px;
+}
+
+
+
+
+@keyframes menuHoverBottomLine {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes menuSize {
+    100% {
+        font-size: 20px;
+        
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+

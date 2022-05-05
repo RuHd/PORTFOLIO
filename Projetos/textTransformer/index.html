@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="container">
+        <h3> Text Transformer</h3>
+        <input type="text" id="txt" value="" placeholder="Insert Text Here">
+        <section id="btnSection">
+            <button id="btnUpper">Convert to Upper Case</button>
+            <button id="btnLower">Convert to Lower Case</button>
+        </section>
+        <input id="upTextBox" type="text" placeholder="Result goes here" value="" readonly>
+        <p id="WordCount">Letter Count: </p>
+        <br>
+        <p style="color: white"> Essa aplicação tem como objetivo converter os caracteres de uma 
+            string inserida pelo usuário em letras maiúsculas ou minúsculas 
+            dependendo da opção escolhida.
+        </p>
+    </div>
+</body>
+<script>
+   const btnUpper = document.getElementById("btnUpper")
+   const btnLower = document.getElementById("btnLower")
+   const wordCount = document.getElementById("WordCount")
+   const textInput = document.getElementById("textInput")
+   const keyCodes = []
+   const currentText = []
+
+//    function spaceChecker (code) {
+//        for(let i = 0; i< currentText.length; i++){
+//            if( currentText[i] !== '' && currentText[i] !== ' ' && code == 8){
+//                 currentText.pop()
+//            }
+//        }
+//    }
+
+   
+    let txt = document.getElementById("upTextBox")
+    wordCount.innerHTML = "Letters Count: " + 0
+
+    function letterCount(){
+        console.log(txt.value.length)
+        wordCount.innerHTML = "Letters Count: " + txt.value.length
+    }
+
+    
+ 
+        
+    
+   btnUpper.addEventListener("click",function(){
+        let txt = document.getElementById("txt").value
+        
+        let upTxt = txt.toUpperCase()
+        document.getElementById("upTextBox").value = upTxt
+
+        letterCount()
+   })
+
+   btnLower.addEventListener("click",function(){
+        let txt = document.getElementById("txt").value
+        let upTxt = txt.toLowerCase()
+        document.getElementById("upTextBox").value = upTxt
+
+        letterCount()
+   })
+</script>
+</html>

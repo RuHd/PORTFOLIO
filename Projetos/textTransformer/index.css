@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+    
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4245f5;
+    padding: 10px;
+}
+
+h3 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+#container {
+    
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#txt {
+    margin-bottom: 20px;
+}
+
+#container input{
+    height: 200px;
+    width: 600px;
+    padding: 5px;
+    border-radius: 20px; 
+    position: relative;
+    margin-bottom: 10px;
+ }
+
+ 
+
+ #container button {
+     width: fit-content;
+     padding: 10px;
+     font-size: 15px;
+     border-radius: 5px;
+     box-shadow: 1px 1px 5px black;
+     margin-bottom: 20px;
+     transition: .5s;
+     color: black;
+     
+ }
+
+ #container button:hover {
+     cursor: pointer;
+     opacity: .8;
+ }
+ 
+ #btnSection {
+     display: flex;
+     width: 45%;
+     height: 50px;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ #btnSection button {
+     align-self: center;
+     text-align: center;
+     margin: 0 auto;
+ }
+
+ #upTextBox {
+    height: 200px;
+    width: 600px;
+    border: 1px solid black;
+    margin-top: 20px;
+ }
+
+ #WordCount {
+     color: white;
+     font-size: 1.3em;
+ }

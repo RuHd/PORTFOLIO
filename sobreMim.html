@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sobreMim.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Portfólio Dev Web - Ruan Mesquita</title>
+</head>
+<body onload = "loadFunction()">
+    
+    
+    <header>
+        <h1>DEV WEB</h1>
+        <ul class="menu">
+            <li> 
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="">Projetos</a>
+            </li>
+            <li>
+                <a href="">Sobre Mim</a>
+            </li>
+            <li>
+                <a href="">Contato</a>
+            </li>
+            
+        </ul>
+    </header>
+    <main>
+        <section class= "photo--section">
+            <img src="fotoRuan.jpeg" alt="Foto de Ruan Mesquita">
+        </section>   
+
+        <h3>Minha história</h3>
+
+        <section class="text">
+            <p>
+                Meu nome é Ruan de Aquino Mesquita, tenho 28 anos de idade e um grande 
+                entusiasta da área de Tecnologia, mais especificamente na atividade de
+                desenvolvimento de páginas na web. Mas, começando do começo, nasci em uma cidade
+                do interior do Paraná chamada Jacarezinho mas cresci na cidade de Jacareí no interior
+                de São Paulo.<br><br>
+    
+                Sou formado em Análise e Desenvolvimento de Sistemas pela Universidade UNIP 
+                de São Jose dos Campos, concluído em 2022. Fiz curso de desenvolvedor web completo
+                na plataforma da Udemy.
+                
+                
+            </p>
+        </section>
+       
+
+    </main>
+    <footer>
+            Portfólio criado via HTML/CSS por Ruan Mesquita            
+    </footer>
+    <script>
+        const body = document.getElementsByTagName("body")
+
+        function loadFunction()  {
+            body[0].classList.add("loadTransition")
+        }
+    </script>
+
+
+    
+</body>
+</html>

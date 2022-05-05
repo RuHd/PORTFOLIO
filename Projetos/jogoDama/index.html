@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<body>
+
+    
+
+    <div id="container"></div>
+    
+    
+    <script>
+        
+        $(function(){
+
+            const timeAzul = []
+            const timeVermelho = []
+            
+
+            // Pintando o tabuleiro
+            let squareBlack = false
+
+            let square = "<div class = 'demo'></div>"
+            for (let i = 0 ; i<64; i++) {
+                 $("#container").append(square)  
+            } 
+
+            const squares = document.querySelectorAll(".demo")
+            
+
+            
+            for (let i = 0 ; i<64; i++) {
+                
+                    if ( i < 8) {
+                        if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                     }
+                     
+                if ( (i < 16) && (i>=8)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+
+                if ( (i < 24) && (i>=16)){
+                    if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                }
+
+                if ( (i < 32) && (i>=24)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+
+                if ( (i < 40) && (i>=32)){
+                    if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                }
+
+                if ( (i < 48) && (i>=40)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+
+                if ( (i < 56) && (i>=48)){
+                    if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                }
+
+                if ( (i < 64) && (i>=56)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+            }   
+
+            function drawPieces () {
+                let img;
+                if ($(azul).attr("src")=="peçaAzul.png"){
+                  
+                }
+                for (let i = 0; i<=22; i++) {
+                    if (squares[i].classList.contains("isBlack")){
+                        $(squares[i]).html(azul)
+
+                        // img = $(square[i]).children()
+
+                        // img.click(function(){
+                        //     img.animate({"opacity":"0.5"},500)
+                        // })
+                        timeAzul.push("A")
+                    }
+                }
+
+                for (let i = 40; i<64; i++) {
+                    if (squares[i].classList.contains("isBlack")){
+                        $(squares[i]).html(vermelho)
+                        timeVermelho.push("V")
+                    }
+                } 
+                    
+            }
+
+            const azul = "<img src='peçaAzul.png' alt=''>"
+            const vermelho = "<img src='peçaVermelha.png' alt=''>"
+            // posicionando as peças azuis
+
+            drawPieces()
+
+
+            // Selecionar a peça ao clicar
+
+            // Estabelecer uma cor indicando que há uma peça 
+            //selecionada
+
+                const blackSquares = []
+                
+                for (let i = 0; i<64; i++){
+                    if (squares[i].classList.contains("isBlack")){
+                        blackSquares.push(i)
+                    }
+                }
+
+
+
+                const img = $(squares[0]).children("img")
+                
+                img.click(function(){img.addClass("pieceSelected")})
+
+               
+
+                
+                
+                // Quando clicar em uma peça, verificar se há espaço
+                // para a movimentação 'DIAGONAL'
+
+                // movimentação de 1 quadrado por rodada
+
+                //para a captura da peça adversária:
+                    // a peça inimiga deve estar ENTRE a peça atacante
+                    // e um espaço vazio
+            
+            
+            
+        })
+
+
+        
+        
+
+        
+
+      
+
+        
+
+        
+
+        
+
+        
+
+       
+        
+    </script>
+</body>
+</html>

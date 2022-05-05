@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="import" href="component.html">
+    <script src="carta.js"></script>
+</head>
+<body>
+    <audio autoplay class="audioPlay">
+        <source src="batmanSong.mp3" type="audio/mp3">
+    </audio>
+    <main>
+        <h1>Catch us if you can, Batsy! HA HA HA HA HA</h1>
+        <div id="grid">
+            <img src="bane.jpg" alt="" class="imgHover">
+            <img src="joker.jpg" alt="" class="imgHover">
+            <img src="Penguin.png" alt="" class="imgHover">
+            <img src="ra's al ghul.jpg" alt="" class="imgHover">
+            <img src="catwoman.jpg" alt="" class="imgHover">
+            <img src="riddler.jpg" alt="" class="imgHover">
+            <img src="scarecrow.jpg" alt="" class="imgHover">
+            <img src="two-face.jpg" alt="" class="imgHover">
+            <img src="bane.jpg" alt="" class="imgHover">
+            <img src="joker.jpg" alt="" class="imgHover">
+            <img src="Penguin.png" alt="" class="imgHover">
+            <img src="ra's al ghul.jpg" alt="" class="imgHover">
+            <img src="catwoman.jpg" alt="" class="imgHover">
+            <img src="riddler.jpg" alt="" class="imgHover">
+            <img src="scarecrow.jpg" alt="" class="imgHover">
+            <img src="two-face.jpg" alt="" class="imgHover">
+         </div>
+    </main>
+    
+     
+    
+</body>
+<script>
+    const grid = document.getElementById("grid")
+    const img = grid.querySelectorAll("img") 
+    const pair = []
+    var allGone = 0
+
+    //Animação das cartas virando
+    function turnCardAnimation(c) {
+        c.classList.add("turnCard")  
+        setTimeout(function(){c.classList.remove("batman-logo")},500)
+        
+    }
+
+    
+    // Posiciona as cartas aleatoriamente
+    function deckShuffle () {
+        let deck = []
+        // armazena as imagens dentro da array deck
+        for (let i = 0; i<img.length; i++){
+            deck.push(img[i].src)
+        }
+
+        // embaralha aleatoriamente o deck
+        for (let i = deck.length -1; i > 0; i--) {
+            let j = Math.floor(Math.random() * i)
+            let k = deck[i]
+            deck[i] = deck[j]
+            deck[j] = k
+        }
+
+        // retorna as imagens aleatorias para as tags img
+        for (let i = 0; i<img.length; i++){
+            img[i].src = deck[i]
+        }
+
+        return console.log(deck)
+    }
+    
+
+    deckShuffle()
+   
+
+    for (let i = 0; i<img.length;i++){
+            img[i].classList.add("batman-logo")
+    }
+
+    function clickeableCards(){
+        for (let i = 0; i<img.length;i++){
+            img[i].addEventListener("click",flipCard)
+        }
+    }
+
+    // Funçao quando duas cartas forem selecionadas
+    function pairEqual () {
+        pair[0].classList.remove("turnCard")
+        pair[1].classList.remove("turnCard")
+        if (pair[0].src == pair[1].src) {
+            pair[0].style.opacity = 0
+            pair[1].style.opacity = 0
+            allGone++
+            pair.pop()
+            pair.pop()
+        } else {
+            pair[0].classList.add("batman-logo")
+            pair[1].classList.add("batman-logo")
+            pair.pop()
+            pair.pop()
+        }
+        setTimeout(clickeableCards,400) 
+        // Win Checker
+        if (allGone == 8) {
+                const title = document.getElementsByTagName("h1")
+                grid.style.display = "none"
+                title[0].style.display = "none"
+                setTimeout(function(){return alert("Parabéns! Você resolveu o jogo!")},400) 
+                setTimeout(function() {window.location.reload()},1000 )  
+                
+        }  
+        
+    }
+    
+    // Função de virar a carta ao ser selecionada
+    function flipCard() {
+       turnCardAnimation(this) 
+       pair.push(this)
+       // Evita que a mesma carta seja comparada consigo mesma
+       if (pair[0] == this && pair[1] == this) {
+           pair.pop()
+       }
+        
+        if (pair.length == 2) {
+            removeClicks()
+            setTimeout(pairEqual,1000)     
+        } 
+        setTimeout(function(){this.classList.add("batman-logo")},2000)
+        // 
+        
+    }
+
+    // Gera o logo das cartas
+
+    function clickeableCards(){
+        for (let i = 0; i<img.length;i++){
+            img[i].addEventListener("click",flipCard)
+        }
+    }
+
+    function removeClicks() {
+        for (let i = 0; i<img.length;i++){
+            img[i].removeEventListener("click",flipCard)
+        } 
+    }
+
+    clickeableCards()
+   
+    
+
+
+    
+
+
+
+
+    
+
+    
+</script>
+</html>
