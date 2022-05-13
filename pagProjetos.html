@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="pagProjetos.css">
+    <script src="https://kit.fontawesome.com/ebc21972aa.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projetos - Portfólio Ruan Mesquita</title>
+</head>
+<body onload="loadTransition()">
+    <header>
+        <h2> Desenvolvimento  Web </h2>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+        </ul>
+    </header>
+
+    <main>
+        <h1> Tipos de Projetos</h1>
+        <div id="projects--container">
+                 
+                <a href="Projetos/AnimaçõesBotões/index.html">
+                    
+                    
+                            <section class="project--card">
+                                <h4>Animações CSS</h4>
+                            <div class="img--container">
+                                <img src="CSS-LOGO.png" alt="">
+                            </div>
+                
+                    <p>
+                       Aqui você encontrará alguns exemplos de Animações
+                       realizadas utilizando CSS.     
+                    </p> 
+                </a>
+             </section>
+            <section class="project--card">
+                
+
+                <a href="pagWebsites.html">
+                    <h4>Design de sites</h4>
+                    <div class="img--container"> 
+                        <img src="Website-image.png" alt="">
+                    </div>
+                    <p>
+                           Nessa seção se encontra alguns templates de sites de áreas diferentes
+                           para demonstrar a estruturação utilizando tags semânticas
+                           e variedades de estilização utilizando o CSS.
+                    </p>
+                </a>
+            </section>
+            <section class="project--card">
+                
+                <a href="sobreMim.html">
+                    <h4>Aplicações Web</h4>
+                    <div class="img--container">
+                        <img src="js-logo.png" alt="">
+                    </div>
+                    <p>
+                        Será apresentado algumas aplicações desenvolvidas utilizando Jquery e Javascript Vanilla.
+                        Como uma calculadora, jogo de dama, jogo da memória e muito mais.
+                    </p>
+                </a>
+            </section>
+       </div>
+    </main>
+ 
+    <footer>
+        
+    </footer>
+    <script>
+        const body = document.getElementsByTagName("body")
+        function loadTransition(){
+            body[0].classList.add("loadTransition")
+        }
+
+    </script>
+</body>
+</html>

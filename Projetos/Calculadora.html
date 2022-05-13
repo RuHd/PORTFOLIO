@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Calculadora.css">
+    <title>Calculadora</title>
+</head>
+
+<body onload="loadFunction()">
+
+    <div class="displayMode">
+        <span style="position: absolute; opacity: 0;">Dark Mode</span>
+        <span class="displayMode--Default--lightMode">Light Mode</span>
+    </div>
+    <div class="calculator">
+        <input class="display" type="text" readonly name="txt" value=" ">
+        <div id="numbers">
+            <input name="num" type="button" value="1">
+            <input name="num" type="button" value="2" onclick="txt.value +=2">
+            <input name="num" type="button" value="3" onclick="calc.txt.value +=3">
+            <input name="num" type="button" value="4" onclick="calc.txt.value +=4">
+            <input name="num" type="button" value="5" onclick="calc.txt.value +=5">
+            <input name="num" type="button" value="6" onclick="calc.txt.value +=6">
+            <input name="num" type="button" value="7" onclick="calc.txt.value +=7">
+            <input name="num" type="button" value="8" onclick="calc.txt.value +=8">
+            <input name="num" type="button" value="9" onclick="calc.txt.value +=9">
+            <input name="num" type="button" value="0" onclick="calc.txt.value +='.'">
+            <input name="num" type="button" value="." onclick="calc.txt.value +='.'">
+            <input name="num" type="button" value="+" onclick="calc.txt.value +='+'">
+            <input name="num" type="button" value="-" onclick="calc.txt.value +='-'">
+            <input name="num" type="button" value="*" onclick="calc.txt.value +='*'">
+            <input name="num" type="button" value="/" onclick="calc.txt.value +='/'">
+            <input name="num" type="button" value="C" onclick="calc.txt.value = ''">
+            <input name="num" style="flex-grow: 1;" class = "equalButton"type="button" value="="
+                onclick="document.calc.txt.value = eval(calc.txt.value)">
+
+        </div>
+    </div>
+
+
+</body>
+<script>
+    var body = document.getElementsByTagName("body")
+    var numbers = document.getElementsByName("num")
+    var display = document.getElementsByClassName("display")
+    var disMode = document.getElementsByTagName("span")
+
+    var result = undefined
+    var operatorsGroup = []
+    var sentence = []
+
+    // Fade-in transition when the page is unloading
+
+
+    function loadFunction() {
+        body[0].classList.add("Transition");
+    }
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i].value == "+" || numbers[i].value == "-"  || numbers[i].value == "*"  || numbers[i].value == "/" ) {
+            operatorsGroup.push(numbers[i].value)
+            numbers[i].addEventListener("click", function() {   
+                sentence.push(numbers[i].value) 
+                if (result >= 0 || result <0) {
+                    display[0].value += numbers[i].value // Concatena um sinal de operação com o resultado mostrado
+                } else {
+                    display[0].value += numbers[i].value
+                }
+            })     
+        } else if (numbers[i].value == "C") {
+            numbers[i].addEventListener("click", function () {
+                display[0].value = " "
+            })
+        } else if (numbers[i].value == "=") {
+            numbers[i].addEventListener("click", function () {
+                    result = eval(display[0].value)
+                    // sentence = display[0].value
+                    // alert(sentence[0]) -- Armazena a operação em uma array
+                    display[0].value = result                      
+            })
+        }
+        else {
+
+            numbers[i].addEventListener("click", function () {
+            
+                if ((result >= 0 || result <0) && result == display[0].value) { // Valor inserido substitui o resultado mostrado caso seja um novo npumero
+                    display[0].value = numbers[i].value
+                } else  {
+                    display[0].value += numbers[i].value
+                }  
+
+            })
+        }
+        
+        numbers[i].classList.add("num")
+    }
+
+    // Dark/Light Mode functionality
+    disMode[0].addEventListener("click", function () {
+        body[0].classList.add("darkMode") // background color on body tag
+        disMode[0].classList.add("displayMode--Default--darkMode")
+        disMode[1].style.opacity = "0"
+        disMode[0].style.opacity = "1"
+    })
+
+    disMode[1].addEventListener("click", function () {
+        body[0].classList.remove("darkMode") //background color on body tag
+        disMode[1].style.opacity = "1"
+        disMode[0].style.opacity = "0"
+
+    })
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #F8F7FD;
+    font-family: 'Roboto Mono', monospace;
+    /* font-weight: bold; */
+    list-style-type: none;
+    text-decoration: none;
+    /* border: 2px solid red; */
+}
+
+
+
+body {
+    /* margin: 35px; */
+    background-image: linear-gradient(-45deg ,#232A34, black);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition: 1s;
+    overflow: hidden;
+    transition: 1s;
+    opacity: 0;       
+}
+
+.loadTransition {
+    opacity: 1;
+}
+
+
+header {
+    position: fixed;
+    top: 0px;
+    padding: 15px;
+    padding-top: 5px;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    /* border: 2px solid red; */
+    
+}
+
+
+
+header h2 {
+    height: 50px;
+    font-size: 30px;
+    margin-top: 15px;
+ 
+}
+
+
+header ul li {
+    margin-left: 10px;
+    list-style: none;
+    font-size: 30px;
+   
+}
+
+ a {
+    position: relative;
+}
+
+ header a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #F8F7FD;
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+} 
+
+header a:hover::before {
+    opacity: 1;
+}
+
+
+main {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: 70px;
+    /* max-height: 500px; */
+    /* border: 2px solid red; */
+}
+
+main h3 {
+    margin-bottom: 20px;
+}
+
+#projects--container {
+   position: relative;
+   margin-top: 20px;
+   display: flex;
+   height: 500px;
+   width: 100%;
+   justify-content: space-between;
+   
+}
+
+
+
+.project--card {
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 0px 20px black;
+    width: 400px;
+    min-height: 300px;
+    font-size: .9em;
+}
+
+.project--card a {
+    transition: opacity .5s;
+}
+
+.project--card a:hover  {
+    background-color: #F8F7FD;
+    opacity: .4;
+    z-index: 1;
+}
+
+
+
+.img--container img {
+    border-radius: 20px;
+    width: 200px;
+    height: 200px;
+    
+
+}
+
+
+
+.project--card  p {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.project--card h4 {
+    margin-bottom: 10px;
+}
+
+
+
+
+@keyframes menuHoverBottomLine {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes menuSize {
+    100% {
+        font-size: 20px;
+        
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+

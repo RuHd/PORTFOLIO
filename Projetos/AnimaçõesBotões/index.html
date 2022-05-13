@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Animações - Botões</title>
+</head>
+<body >
+    <header>
+        <ul>
+            <li></li>
+            <li><a href="..\..\index.html">HOME</a></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </header>
+    <main>
+            <p>
+              Abaixo estão localizados alguns exemplos de animações de botões quando o cursor do mouse 
+              se encontra dentro da área específica do botão.
+            </p>
+            <div id="btn--container">
+                <button class = "btn--slideRight">Passe o Mouse</button>
+                <button class = "btn--slideUp">Passe o Mouse</button>
+                <button class = "btn btn--roundSlide">Passe o Mouse</button>
+                <button class = "btn btn--rounded">Passe o Mouse</button>
+                <button class = "btn btn--slash">
+                    <span class = "slashBottom"></span>
+                    <span class = "slashTop"></span>
+                    Passe o Mouse
+                </button>
+                <button class = "btn btn--move">
+                    Passe o Mouse
+                </button>
+            </div>
+            <p>
+                Nessa seção, há um exemplo de animação para menus do tipo drop
+            </p>
+
+            <div id="menu--container">
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li class="Categorias">
+                        <a href="#" class="categoria--anchor">Categorias</a>
+                        <div class="dropMenu--Categorias">
+                            <a href="">Categoria 1</a>
+                            <a href="">Categoria 2</a>
+                            <a href="">Categoria 3</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        
+    </main>
+    
+</body>
+<script>
+    $(function(){
+       $("body").addClass("transition")  
+    })
+</script>
+</html>

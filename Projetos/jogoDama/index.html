@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="peças.js"></script>
+<body>
+
+    
+
+    <div id="container"></div>
+    
+    
+    <script>
+        
+        $(function(){
+            class Peca {
+                constructor(img,cor, posicao){
+                    this.img = img
+                    this.cor = cor
+                    this.posicao = posicao
+                    this.dama = false
+                    this.diagLeft = 0
+                    this.diagRight = 0
+                }
+
+                move() {
+                    this.diagLeft = this.posicao - 9
+                    this.diagRight = this.posicao - 7
+                    let pos = this.posicao
+                    let left = this.diagLeft
+                    let right = this.diagRight
+                    
+                    if($(squares[this.diagLeft]).html() && $(squares[this.diagRight]).html() ){
+                        alert("occupied")
+                    } else {
+                        
+                        $(squares[this.diagLeft]).css("backgroundColor","blue")
+                        $(squares[this.diagRight]).css("backgroundColor","blue")
+                        
+                        $(squares[this.diagLeft]).hover(function(){
+                            
+                            $(this).css("cursor","pointer")
+                            $(this).click(function(){
+                                
+                                $(squares[pos]).empty()
+                                alert(squares[left])
+                                $(squares[left]).append(new Peca(vermelho,"vermelho",left))
+
+                                $(squares[this.diagLeft]).css("backgroundColor","black")
+                                $(squares[this.diagRight]).css("backgroundColor","black")
+
+                                
+
+                                
+                            })
+                        })
+
+                        this.posicao = this.diagLeft
+                    }
+
+                    
+                    // for (let i = 0; i<squares.length; i++){
+                    //     if(squares[i]){
+                    //         squares[this.posicao-9]
+                    //     }
+                    // }
+                }
+            }
+
+            const timeAzul = []
+            const timeVermelho = []
+            
+
+            // Pintando o tabuleiro
+            let squareBlack = false
+
+            let square = "<div class = 'demo'></div>"
+            for (let i = 0 ; i<64; i++) {
+                 $("#container").append(square)  
+            } 
+
+            const squares = document.querySelectorAll(".demo")
+            
+
+            
+            for (let i = 0 ; i<64; i++) {
+                
+                    if ( i < 8) {
+                        if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                     }
+                     
+                if ( (i < 16) && (i>=8)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+
+                if ( (i < 24) && (i>=16)){
+                    if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                }
+
+                if ( (i < 32) && (i>=24)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+
+                if ( (i < 40) && (i>=32)){
+                    if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                }
+
+                if ( (i < 48) && (i>=40)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+
+                if ( (i < 56) && (i>=48)){
+                    if (squareBlack == false) {
+                            squares[i].classList.add("isBlack")
+                            squareBlack = true
+                        } else {
+                            squareBlack = false
+                        }
+                }
+
+                if ( (i < 64) && (i>=56)){
+                    if (squareBlack) {
+                        squares[i].classList.add("isBlack")
+                        squareBlack = false
+                    } else {
+                        squareBlack = true
+                    }
+                }
+            }  
+            
+            const azul = "<img src='peçaAzul.png' alt=''>"
+            const vermelho = "<img src='peçaVermelha.png' alt=''>"
+
+            function drawPieces () {
+                for (let i = 0; i<=22; i++) {
+                    if (squares[i].classList.contains("isBlack")){
+                       timeAzul.push(new Peca(azul,"azul",i))
+                        $(squares[i]).html(timeAzul[timeAzul.length - 1].img)
+                        
+                    }
+                }
+
+                for (let i = 40; i<64; i++) {
+                    if (squares[i].classList.contains("isBlack")){
+                        timeVermelho.push(new Peca(vermelho,"vermelho",i))
+                        $(squares[i]).html(timeVermelho[timeVermelho.length - 1].img)
+                    }
+                } 
+                    
+            }
+            console.log(timeVermelho)
+            
+            // posicionando as peças
+
+            drawPieces()
+
+
+
+            // Selecionar a peça ao clicar
+
+            // Estabelecer uma cor indicando que há uma peça 
+            //selecionada
+
+            
+
+            for (let i = 0 ; i<timeVermelho.length;i++){
+                let currentPiece = timeVermelho[i]
+                $(squares[currentPiece.posicao]).click(function(){
+                    currentPiece.move()
+                })
+                        
+            }
+
+            for (let i = 0 ; i<timeAzul.length;i++){
+                $(squares[timeAzul[i].posicao]).click(function(){
+                    
+                })
+                        
+            }
+
+
+                
+
+               
+                
+            
+            
+            
+        })
+
+
+        
+        
+
+        
+
+      
+
+        
+
+        
+
+        
+
+        
+
+       
+        
+    </script>
+</body>
+</html>

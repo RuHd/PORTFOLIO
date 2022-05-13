@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    border: none;
+    list-style-type: none;
+    text-decoration: none;
+    color: #F8F7FD;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 800px;
+    background-image: linear-gradient(-45deg ,#232A34, black);
+    background-repeat: repeat;
+    background-attachment: fixed;
+    opacity: 0;
+    transition: 1s;
+    
+}
+
+.transition {
+    opacity: 1;
+}
+
+header {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    padding-top: 30px;
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    transition: 0.5s;
+    font-size: 25px;
+    border-bottom: 1px solid #F8F7FD;
+    background-color: #000000;
+    
+}
+
+header a {
+    position: relative;
+}
+
+header a:after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-color: #F8F7FD;
+    transition: .5s ease;
+}
+
+header a:hover::after {
+    width: 100%;
+}
+
+
+
+header ul {
+    width: fit-content;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+main {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    color: #F8F7FD;
+  
+    
+   
+}
+
+main p {
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+#btn--container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    text-align: center;
+    color: #F8F7FD;
+}
+
+
+
+
+button {
+    position: relative;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 2px solid black;
+    width: 150px;
+    height: 50px;
+    color: white;
+}
+
+
+.btn--slideRight{
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.btn--slideRight::before {
+    content: "";
+    border-radius: 15px;
+    top: -1px;
+    left: -1px;
+    height: 100%;
+    width: 0px;
+    display: none;
+    position: absolute;
+    background-color: aquamarine;
+    box-shadow: 5px 5px 30px aquamarine;
+    border: 2px solid aquamarine;
+    z-index: -1;
+    
+}
+.btn--slideRight:hover{
+    cursor: pointer;
+    transition: .3s;
+    color: #232A34;
+    border: none;
+    box-shadow: 5px 5px 30px aquamarine;
+}
+
+.btn--slideRight:hover::before {
+    display: block;
+    animation-name: slideRight;
+    animation-duration: .7s;
+    animation-fill-mode: both;
+    
+}
+
+
+
+@keyframes slideRight {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+.btn--slideUp {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.btn--slideUp::before {
+    content: "";
+    border-radius: 15px;
+    bottom: -1px;
+    height: 0;
+    width: 100%;
+    display: none;
+    position: absolute;
+    background-color: blue;
+    box-shadow: 5px 5px 30px blue;
+    border: 2px solid blue;
+    z-index: -1;
+}
+
+.btn--slideUp:hover {
+    cursor: pointer;
+    transition: .3s;
+    color: #F8F7FD;
+    border: none;
+    box-shadow: 5px 5px 30px blue;
+    
+}
+
+.btn--slideUp:hover::before {
+    display: block;
+    animation-name: slideUp;
+    animation-duration: .3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+
+}
+
+@keyframes slideUp {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+.btn--roundSlide {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn--roundSlide:hover {
+    cursor: pointer;
+}
+
+.btn--roundSlide::before {
+    position: absolute;
+    content: "";
+    border-radius: 50px;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: .5s;
+}
+
+.btn--roundSlide::after {
+    position: absolute;
+    content: "";
+    border-radius: 50px;
+    left: 0;
+    bottom: -50px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    
+    
+
+    
+}
+
+.btn--roundSlide:hover::before {
+    animation-name: roundSlideDown;
+    animation-duration: .5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    box-shadow: 2px 2px 15px red;
+
+}
+
+.btn--roundSlide:hover::after {
+    animation-name: roundSlideUp;
+    animation-duration: .5s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+    box-shadow: 2px 2px 15px red;
+
+}
+
+
+
+@keyframes roundSlideUp {
+    0% { bottom: -50px}
+    100% {bottom: -40px;}
+}
+
+@keyframes roundSlideDown {
+    0% { bottom: 50px}
+    100% {bottom: 40px}
+}
+
+.btn--rounded{
+    position: relative;
+    background-color: transparent;
+    width: 120px;
+    height: 120px;
+    border-radius: 80%;
+    overflow: hidden;
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.btn--rounded:hover {
+    cursor: pointer;
+    color:#232A34;
+    border: none;
+    box-shadow: 2px 2px 50px rgb(140, 0, 255) inset;
+    /* border: 1px solid rgb(140, 0, 255); */
+    
+}
+
+.btn--rounded:hover::after {
+   animation: circleIncrease 1s both;
+    
+}
+
+.btn--rounded:after {
+    content: "";
+    width: 0%;
+    height: 0%;
+    border-radius: 80%;
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    background-color: rgb(200, 179, 212) ;
+    z-index: -1;
+    align-self: center;
+    transition: 1s;
+}
+
+@keyframes circleIncrease {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+
+    100% {
+        width: 110%;
+        height: 110%;
+    }
+}
+
+@keyframes upDownWord {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.btn--slash{
+    border:none;
+    transition:1s;
+}
+
+
+
+
+
+.btn--slash:hover::after  {
+    animation: slashLeft .5s both;
+}
+
+.btn--slash:hover::before  {
+    animation: slashRight .5s both;
+}
+
+.btn--slash::after{
+    content: "";
+    position: absolute;
+    border-radius: 100%;;
+    width: 7px;
+    height: 7px;
+    bottom: -3px;
+    right: 0px;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(247, 224, 224);
+}
+
+.btn--slash::before{
+    content: "";
+    position: absolute;
+    border-radius: 100%;;
+    width: 7px;
+    height: 7px;
+    top: -3px;
+    left: 0px;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(247, 224, 224);
+}
+
+.slashBottom {
+    position: absolute;
+    display: inline-block ;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(247, 224, 224);
+    width: 0%;
+    height: 2px;
+    right:2px;
+    bottom: -1px;
+}
+
+.slashTop {
+    position: absolute;
+    display: inline-block ;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgb(247, 224, 224);
+    width: 0%;
+    height: 2px;
+    left:1px;
+    top: -1px;
+}
+
+.btn--slash:hover .slashBottom {
+    animation-name: LineRight;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+   
+}
+
+.btn--slash:hover .slashTop {
+    animation-name: LineLeft;
+    animation-duration: .5s;
+    animation-fill-mode: both;
+}
+
+@keyframes slashLeft {
+    0% {
+        right: 0px;
+    }
+
+    100% {
+        right: 140px;
+    }
+}
+
+@keyframes slashRight{
+    0% {
+        left: 0%;
+    }
+
+    100% {
+        left: 98%;
+    }
+}
+
+@keyframes LineRight{
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 96%;
+    }
+}
+
+@keyframes LineLeft{
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 98%;
+    }
+}
+
+.btn--move{
+    
+    transition: all .5s ease;
+    
+}
+
+.btn--move:hover {
+    border:none;
+    transform: translateY(10px);
+    box-shadow: 0px 5px 15px #F8F7FD ;
+    background-color: #F8F7FD;
+    color: #232A34;
+
+}
+
+#menu--container{
+    display: flex;
+    justify-content: space-around;
+  
+}
+
+#menu--container ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    height: 80px;
+    border-radius: 20px;
+    background-color: crimson;
+    
+}
+
+
+
+.Categorias {
+    position: relative;
+    
+}
+
+
+
+.categoria--anchor:hover{
+    background-color: #F8F7FD;
+    color: crimson;
+}
+
+
+
+
+
+.dropMenu--Categorias{
+    width: 100%;
+    position: absolute;
+    top:50px;
+    text-align: center;
+    background-color: #232A34;
+    padding: 0px;
+    opacity: 0;
+    display: block;
+    transform: translateY(-50px);
+    transition: .5s;
+    z-index: -1;
+    
+}
+
+.categoria--anchor:hover + .dropMenu--Categorias{
+    opacity: 1;
+    transform: translateY(1px);
+}   
+
+
+
+.dropMenu--Categorias a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    font-size: 13px;
+    transition: .5s;
+    padding: 10px;
+}
+
+
+.dropMenu--Categorias a:hover + .dropMenu--Categorias{
+   
+    cursor: pointer;
+    background-color: #F8F7FD;
+    color: #232A34;
+}

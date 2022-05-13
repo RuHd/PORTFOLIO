@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+}
+
+
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 17px;
+    box-shadow: 0px 1px 2px black;
+    /* border: 1px solid red; */
+    z-index: 2;
+
+}
+
+header a {
+    font-size: 17px;
+}
+
+header button {
+    padding:3px;
+    border-radius: 10px;
+    width: 43px;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+.upper--menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+    padding-right:5px;
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+
+.upper--menu ul:nth-child(1){
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+}
+
+.upper--menu ul:nth-child(1) li {
+    padding:0 10px;
+    display: flex;
+    align-items: center;
+    
+    height: 100%;
+    text-align: center;
+}
+
+.upper--menu ul:nth-child(1) li:hover {
+    background-color: #04AA6D;
+    
+}
+
+.upper--menu ul:nth-child(1) li:hover a {
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+.upper--menu ul:nth-child(2){
+    display: flex;
+    align-items: center;
+    
+}
+
+.pro--btn {
+    width: 120px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pro--btn button {
+    background-color: #FFFFFF;
+}
+
+.website--btn{
+    background-color: #FFC0C7;
+    border-radius: 20px;
+    width:144px;
+    height: 43px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.website--btn:hover {
+    background-color: #04AA6D;
+}
+
+.website--btn:hover a {
+    color: white;
+}
+.website--btn a {
+    font-weight: bold;
+}
+
+.website--btn button {
+    background-color: #FFFFFF;
+    
+}
+
+.upper--menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+.upper--menu ul li {
+    margin-left: 20px;
+}
+
+.login {
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width:144px;
+    height: 43px;
+    background-color: #04AA6D;
+}
+
+.login:hover {
+    background-color: #049b63;
+    cursor: pointer;
+}
+
+.login a {
+    color: white;
+}
+
+.paid--Courses {
+    display: flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    width:144px;
+    height: 43px;
+ 
+}
+
+.paid--Courses:hover {
+    background-color: #04AA6D;
+    color: white;
+    cursor: pointer;
+}
+
+.paid--Courses:hover a{
+    color: white;
+    cursor: pointer;
+}
+
+.lower--menu {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    background-color: #282A35;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    color: #F1F1F1;
+    
+}
+
+
+
+.lower--menu ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    color: rgb(241,241,241);
+}
+
+.lower--menu ul li {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 8px;
+    
+   
+}
+
+.lower--menu ul li:hover {
+    background-color: black;
+}
+
+.lower--menu ul a {
+    color: #F1F1F1;
+    font-size: 17px;
+    font-weight: n;
+}
+
+.lower--menu li {
+    margin-left: 10px;
+}
+
+/* Estilização do elemento ASIDE */
+aside {
+    position: fixed;
+    display: inline-block;
+    width: 18%;
+    overflow-y:scroll;
+    max-height: 100%;
+    background-color: #E7E9EB;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 21px;
+}
+
+aside li {
+    width: 100%;
+    padding-top: 5px;
+    padding-left: 13px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
+    flex-wrap: nowrap;
+    margin-left: 235px ;
+    padding: 15px;
+    width: 940px;
+    height: 1950px;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+main button {
+    border: none;
+    background-color: transparent;
+}
+
+main h1 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 42px;
+}
+
+main h2 {
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 32px;
+}
+
+main section{
+    /* border: 2px solid red; */
+}
+
+.btn--main--container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.btn--main--container button {
+    background-color: #04AA6D;
+    color: #F1F1F1;
+    font-size: 17px;
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn--main--container button:hover {
+    background-color: #049b63;
+    cursor: pointer;
+}
+
+#html--about{
+    height: 311px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    background-color: #D9EEE1;
+}
+
+#html--about button {
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 15px;
+}
+
+.btn--htmlTutorial{
+    width: fit-content;
+    display: inline-block;
+    background-color: #04AA6D;
+    color: #F1F1F1;
+    
+
+}
+
+.btn--videoTutorial{
+    position: relative;
+    width: fit-content;
+    background-color: #282A35;
+    color: #F1F1F1;
+}
+
+.btn--videoTutorial span {
+    background-color: #FFF4A3;
+    border-radius: 20px;
+    padding: 5px 15px;
+    width: fit-content;
+    display: inline-block;
+    position: absolute;
+    font-weight: normal;
+    top: -12px;
+    left: -20px;
+    transform: rotateZ(-25deg);
+
+}
+
+#tryItYourself {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    
+    font-weight: normal;
+    height: 620px;
+    border-bottom: 1px solid #E7E9EB;
+}
+
+#html--Example {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* height: 350px; */
+    padding: 10px 15px;
+    background-color: #E7E9EB ;
+}
+
+#html--Example span {
+    text-align: center;
+    line-height: 190px;
+    display: inline-block;
+    height: 287px;
+    border-left: 4px solid #04AA6D;
+    background-color: white;
+    font-size: 30px;
+
+}
+
+#html--Example button {
+    width: fit-content;
+    background-color: #04AA6D;
+    color: #F1F1F1;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 940px;
+    height: 900px;
+    margin-left: 250px ;
+    padding-left: 10px;
+    font-family: "Source Sans Pro", sans-serif;
+    /* border: 2px solid red; */
+}
+
+#lowerOptions--tutorial{
+    display: flex;
+    justify-content: space-around;
+}
+
+#lowerOptions--tutorial a {
+    font-size: 14px;
+}
+
+footer p {
+    color: #909090;
+    font-size: 11px;
+    font-family: Verdana, sans-serif;
+    
+}
+
+.html--references{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 196px 196px 196px;
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: space-evenly;
+    height:300px;
+}
+
+.html--references a {
+    background-color: #E7E9EB;
+    border-radius: 5px;
+    padding: 10px 15px;
+    text-align: center;
+    line-height: 40px;
+}
+.declaration{
+    border-top: 1px solid #E7E9EB;
+    padding-top: 15px;
+}
+
+.copyright {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.misc--menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #E7E9EB ;
+    border-bottom: 1px solid #E7E9EB ;
+    padding: 20px 0;
+
+
+}
+
+.misc--menu a {
+    display: inline-block;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    background-color: #E7E9EB;
+}
+
+.misc--menu a:hover {
+    background-color: black;
+    color: #F1F1F1;
+    cursor: pointer;
+}
+
+.disclaimer {
+    width: 100%;
+    position: sticky;
+    color: #FFFFFF;
+    background-color: #282A35;
+    bottom: 0;
+    text-align: center;
+    padding:  5px 0;
+}
