@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="home.css">
     <title>Exemplo W3schools</title>
 </head>
-<body>
+<body onload="loadTransition()">
    <header>
         <section class="upper--menu">
             <ul>
@@ -457,6 +457,17 @@
         </p>
         <img src="" alt="">
    </footer>
-   <p class="disclaimer">Template criado para fins meramente ilustrativos</p>
+
+   <div class="disclaimer">
+       <p>Template criado para fins meramente ilustrativos</p>
+       <a href="..\..\..\pagProjetos.html">Voltar para a página de projetos</a>
+   </div>  
 </body>
+<script>
+    const body = document.getElementsByTagName("body")
+
+    function loadTransition(){
+        body[0].classList.add("loadTransition")
+    }
+</script>
 </html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clock.css">
+    <title>Relógio Digital</title>
+</head>
+<body>
+    <header> <a href="..\..\index.html">Home</a></header>
+    <div id="relogio">
+        <span></span>
+        <span class="two-dots">:</span>
+        <span></span>
+        <span class="two-dots">:</span>
+        <span></span>
+    </div>
+</body>
+<script>
+    const num = document.querySelectorAll("span")
+    const clock = document.getElementById("relogio")
+    const dots = document.getElementsByClassName("two-dots")
+
+    const hour = num[0]
+    const min = num[2]
+    const sec = num[4]
+
+   
+
+
+    setInterval(function time(){
+        let  c = new Date()
+
+        let h = c.getHours()
+        let m = c.getMinutes()
+        let s = c.getSeconds()
+
+
+        if(s<=59 && s>=55){
+            sec.style.color="red"
+            min.style.color="red"
+            hour.style.color="red"
+
+            dots[0].style.color="red"
+            dots[1].style.color="red"
+        } else {
+            sec.style.color="white"
+            min.style.color="white"
+            hour.style.color="white"
+
+            dots[0].style.color="white"
+            dots[1].style.color="white"
+        }
+
+        if(h<10)h = '0'+h
+        if(m<10) m = '0'+m
+        if(s<10) s = '0'+s
+
+        hour.textContent = h
+        min.textContent = m
+        sec.textContent= s
+
+     
+        
+    })
+
+</script>
+</html>

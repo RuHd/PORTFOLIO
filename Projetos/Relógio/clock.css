@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center; */
+    background-color: yellow;
+    background-image: linear-gradient(to bottom right white to yellow);
+    height: 600px;
+    
+
+}
+
+a {
+    position: relative;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    transition: .5s;
+    font-size: 2em;
+}
+
+a::after {
+    content : "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    bottom: 0;
+    left: 0;
+    transition: .3s;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+header{
+
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+
+header:hover {
+    background-color: black;
+}
+
+header:hover a {
+    color: white;
+}
+
+
+#relogio {
+    margin: 0 auto;
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 200px;
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px black;
+    
+
+
+}
+
+#relogio span {
+    display: inline-block;
+    color: white;
+    width: fit-content;
+    font-size: 5em;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+
+}
+
+.two-dots {
+   opacity: 0;
+   animation: on-off infinite 1s backwards
+}
+
+@keyframes on-off {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

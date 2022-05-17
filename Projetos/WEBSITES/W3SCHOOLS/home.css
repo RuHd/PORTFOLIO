@@ -8,6 +8,18 @@
     box-sizing: border-box;
 }
 
+a:hover {
+    cursor : pointer;
+}
+
+body {
+    transition: 1s;
+    opacity: 0;
+}
+
+.loadTransition {
+    opacity: 1;
+}
 
 
 header {
@@ -460,6 +472,8 @@ footer p {
 }
 
 .disclaimer {
+    display: flex;
+    justify-content: center;
     width: 100%;
     position: sticky;
     color: #FFFFFF;
@@ -467,4 +481,18 @@ footer p {
     bottom: 0;
     text-align: center;
     padding:  5px 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.disclaimer p {
+    color: #FFFFFF;
+    margin-right: 30px;
+}
+
+.disclaimer a {
+    color: #FFFFFF;
+}
+
+.disclaimer a:hover {
+    color: #04AA6D
 }

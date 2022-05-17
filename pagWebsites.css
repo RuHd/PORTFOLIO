@@ -31,22 +31,19 @@ a {
 header {
     position: sticky;
     top: 0;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 20px;
     background-color: black;
     font-size: 25px;
     border-bottom: 1px solid #F8F7FD;
+    color: #F8F7FD
 
 }
 
-header a {
-    position: relative;
-}
-
-header a::after {
+#menu a::after {
     position: absolute;
     content: "";
     width: 0%;
@@ -57,10 +54,23 @@ header a::after {
     transition: .5s;
 }
 
-
-
-header a:hover::after {
+#menu a:hover::after {
     width: 100%;
+}
+
+#menu a:hover {
+    cursor: pointer;
+}
+
+#menu {
+    display: flex;
+    justify-content: space-evenly;
+    
+    width: 300px;
+}
+
+#menu a {
+    position: relative;
 }
 
 /* ESTILIZAÇÃO DA TAG MAIN */
@@ -78,6 +88,10 @@ main p {
     text-align: center;
 }
 
+main > p {
+    margin-top: 15px;
+}
+
 main ul
 {
     margin-top: 25px;
@@ -91,17 +105,20 @@ main ul
 /* ESTILIZAÇÃO DO CARD DE SELEÇÃO DOS WEBSITES */
 
 .websiteCard--Container {
-    max-width: 450px;
-    min-height: 250px ;
+    width: 450px;
+    min-height: 350px ;
     box-shadow: 3px 5px 10px black;
     padding: 10px;
     transition: opacity 0.8s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .img--Container {
-    display: inline-block;
-    width: 450px;
-    height: 300px;
+    width: 380px;
+    height: 200px;
 }
 
 .websiteCard--Container img {
@@ -112,12 +129,22 @@ main ul
 
 
 .websiteCard--Container p {
-   
-    padding-top: 15px;
     margin-top: 20px;
 }    
 
 .websiteCard--Container:hover {
     opacity: 0.5;
+    cursor: pointer;
+}
+
+.original-Link {
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+.original-Link:hover {
+    color: red;
     cursor: pointer;
 }

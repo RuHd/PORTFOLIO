@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="appsWeb.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Aplicativos Web</title>
+</head>
+<body onload="loadTransition()">
+    <header>
+        <h2>Desenvolvimento Web</h2>
+        <div id="menu">
+            <a href="index.html">Home</a>
+            <a href="pagProjetos.html">Projetos</a>
+        </div>   
+    </header>
+    <main>
+        <a href="Projetos/Calculadora.html" class="app-card">
+            <img src="Calculadora.JPG" alt="">
+            <p>
+                Segue um exemplo de Calculadora criado utilizando o Javascript Vanilla e DOM
+            </p>
+        </a>
+        <a href="Projetos/JogoDaMemoria/index.html" class="app-card">
+            <img src="" alt="">
+            <p>
+                Jogo da Memória temático do universo do Batman
+            </p>
+        </a>
+    </main>
+</body>
+<script>
+    const body = document.getElementsByTagName("body")
+    function loadTransition(){
+        body[0].classList.add("loadTransition")
+    }
+</script>
+</html>

@@ -17,13 +17,13 @@
 body {
     /* margin: 35px; */
     background-image: linear-gradient(-45deg ,#232A34, black);
-    background-size: cover;
+    background-size: fill;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     transition: 1s;
-    overflow: hidden;
     transition: 1s;
     opacity: 0;       
 }
@@ -103,6 +103,7 @@ main h3 {
    position: relative;
    margin-top: 20px;
    display: flex;
+   flex-wrap: wrap;
    height: 500px;
    width: 100%;
    justify-content: space-between;
