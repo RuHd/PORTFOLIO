@@ -18,6 +18,8 @@
 body {
     margin: 10px;
     background-image: linear-gradient(-45deg ,#232A34, black);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     max-height: 635px;  
     /* display: flex;
     align-items: center;
@@ -72,7 +74,7 @@ main h1 {
 
 
 
-.btn--options a {
+.btn--options  a {
     position: relative;
     border: none;
     text-decoration: none;
@@ -85,33 +87,36 @@ main h1 {
     color: #F8F7FD;
     border: 2px solid #F8F7FD;
     transition: 1s;
+    overflow: hidden;
     
     
 }
 
-.btn--options a:before {
-    border-radius: 5px;
-    bottom:0;
-    left:0;
+.btn--options  a::after {
+    border-radius: 10px;
+    bottom:-1;
+    left: -1;
     content: "";
-    width: 101%;
+    width: 100%;
     height: 0;
     background-color: #F8F7FD;
     position: absolute;
     z-index: -1;
+    transition: .3s;
     
     
 }
 
-.btn--options a:hover::before {
-    animation-name:btn--hover;
-    animation-duration: .7s;
-    animation-fill-mode: both;
+.btn--options  a:hover::after {
+    height: 101%;
+    width: 101%;
+    border: 2px solid #F8F7FD;
+   
 
 }
 
-.btn--options a:hover {
-    color:#232A34
+.btn--options  a:hover {
+    color:#232A34;
 }
 
 
@@ -127,7 +132,7 @@ main h1 {
     }
 
     100% {
-        height: 100%;
+        height: 1000%;
         color:#232A34;
     }
 }
@@ -227,28 +232,34 @@ main p span {
 }
 
 #icons--socialMedia{
+    display: flex;
     margin-top: 40px;
     width: 100%;
 }
 
 #icons--socialMedia i {
-    border-radius: 20px;;
-    text-align: center;
-    line-height: 45px;
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     
     
 }
 
-#icons--socialMedia i:hover {
+#icons--socialMedia a {
+    display: inline-block;
+    border-radius: 20px;;
+    text-align: center;
+    width: 50px;
+    padding: 10px;
+}
+
+#icons--socialMedia a:hover {
     cursor: pointer;
     background-color: #F8F7FD;
     transition: 1s;
 }
 
-#icons--socialMedia i:hover .fa-brands.fa-github{
-    background-color: #161d27;
+#icons--socialMedia a:hover i{
+    color: #161d27;
 }
 
 
@@ -264,5 +275,40 @@ footer {
     border: 2px solid red;
     
     
+}
+
+@media screen and (max-width:760px){
+    body {
+        min-width: 700px;
+        background-image: linear-gradient(-45deg ,#232A34, black);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text p {
+        text-align: center;
+    }
+
+    #icons--socialMedia {
+        justify-content: center;
+    }
 }
 

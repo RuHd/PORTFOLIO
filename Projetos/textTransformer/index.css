@@ -14,6 +14,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     background-color: #4245f5;
     padding: 10px;
 }
@@ -24,25 +25,40 @@ h3 {
 }
 
 #container {
-    
     position:relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    height: fit-content;
 }
 
-#txt {
+.txt {
+    display: inline-block;
     margin-bottom: 20px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    margin: 0;
 }
 
-#container input{
+/* #container input{
     height: 200px;
     width: 600px;
     padding: 5px;
     border-radius: 20px; 
     position: relative;
     margin-bottom: 10px;
+ } */
+
+ #container p {
+    height: 200px;
+    width: 600px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 20px;
+    padding: 20px;
+    overflow: auto;
  }
 
  
@@ -66,8 +82,7 @@ h3 {
  
  #btnSection {
      display: flex;
-     width: 45%;
-     height: 50px;
+     width: 430px;
      align-items: center;
      justify-content: space-between;
  }
@@ -83,9 +98,11 @@ h3 {
     width: 600px;
     border: 1px solid black;
     margin-top: 20px;
+    overflow: scroll;
  }
 
  #WordCount {
      color: white;
      font-size: 1.3em;
  }
+

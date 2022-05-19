@@ -21,7 +21,6 @@ button:hover{
 body {
     display: flex;
     flex-direction: column;
-    height: 800px;
     background-image: linear-gradient(-45deg ,#232A34, black);
     background-repeat: repeat;
     background-attachment: fixed;
@@ -80,10 +79,12 @@ header {
 }
 
 main {
-    margin: 0 auto;
-    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
     text-align: center;
     color: #F8F7FD;
+    height: fit-content;
   
     
    
@@ -550,4 +551,49 @@ button {
     cursor: pointer;
     background-color: #F8F7FD;
     color: #232A34;
+}
+
+@media screen and (max-width:900px){
+    body {
+        min-width: 700px;
+        background-image: linear-gradient(-45deg ,#232A34, black);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    header
+    {
+        z-index: 2;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #btn--container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        height: auto;
+    }
+
+    #btn--container button {
+        width: fit-content;
+        width: 150px;
+        height: 50px;
+    }
+
+    #btn--container * {
+        flex-shrink: 0;
+    }
+
+     .btn--rounded {
+         border-radius: 50%;
+         width: 120px;
+         height: 320px;
+     }
 }
