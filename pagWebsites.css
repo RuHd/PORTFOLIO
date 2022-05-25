@@ -43,6 +43,10 @@ header {
 
 }
 
+header h2 {
+    transition: .3s;
+}
+
 #menu a::after {
     position: absolute;
     content: "";
@@ -151,12 +155,12 @@ main ul
 
 @media screen and (max-width:900px){
     body {
+        background-color: red;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         /* max-height: 900px ; */
-        min-width: 900px;
         background-image: linear-gradient(-45deg ,#232A34, black);
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -167,11 +171,19 @@ main ul
         z-index: 2;
         width: 100%;
     }
+
+    header h2 {
+        font-size: 18px;
+        transition: .3s;
+    }
     
     ul {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 20px;
     }
 
-}    
+}  
+

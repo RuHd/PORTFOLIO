@@ -100,5 +100,5 @@ main {
     border-radius: 20px;
     width: 280px;
     height: 200px;
-    object-fit: contain;
+    object-fit: stretch;
 }

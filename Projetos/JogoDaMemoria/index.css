@@ -93,3 +93,21 @@ img {
     opacity: 0.5;
     cursor: pointer;
 }
+
+footer {
+    display: fixed;
+    bottom: 0px;
+    background-color: black;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 30px;
+    transition: color .3s;
+}
+
+footer a:hover {
+    color: red;
+}

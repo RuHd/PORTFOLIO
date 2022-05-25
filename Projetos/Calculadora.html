@@ -12,7 +12,7 @@
 <body onload="loadFunction()">
     <header> 
         <a href="..\index.html">Home</a>
-        <a href="">Projetos</a>
+        <a href="..\pagProjetos.html">Projetos</a>
     </header>
     
     <div class="calculator">
@@ -49,8 +49,9 @@
     var disMode = document.getElementsByTagName("span")
 
     var result = undefined
-    var operatorsGroup = []
+    var operatorsGroup = ["+","-","*","/","."]
     var sentence = []
+    var dotClicked = false
 
     // Fade-in transition when the page is unloading
 
@@ -76,47 +77,38 @@
         } else if (numbers[i].value == "=") {
             numbers[i].addEventListener("click", function () {
                     result = eval(display[0].value)
-                    // sentence = display[0].value
-                    // alert(sentence[0]) -- Armazena a operação em uma array
-                    display[0].value = result                      
+                    display[0].value = result    
+                    dotClicked = false                  
+            })
+        }  else if (numbers[i].value == ".") {
+            numbers[i].addEventListener("click", function() {
+                if (!dotClicked) {
+                    if ((result >= 0 || result <0) && result == display[0].value) { // Valor inserido substitui o resultado mostrado caso seja um novo numero
+                        display[0].value = numbers[i].value
+                    } else  {
+                        display[0].value += numbers[i].value
+                    } 
+
+                    dotClicked = true
+                }
             })
         }
         else {
 
             numbers[i].addEventListener("click", function () {
-            
-                if ((result >= 0 || result <0) && result == display[0].value) { // Valor inserido substitui o resultado mostrado caso seja um novo npumero
+                 
+                if ((result >= 0 || result <0) && result == display[0].value) { // Valor inserido substitui o resultado mostrado caso seja um novo numero
                     display[0].value = numbers[i].value
                 } else  {
                     display[0].value += numbers[i].value
                 }  
+               
 
             })
         }
         
         numbers[i].classList.add("num")
     }
-
-    // Dark/Light Mode functionality
-    disMode[0].addEventListener("click", function () {
-        body[0].classList.add("darkMode") // background color on body tag
-        disMode[0].classList.add("displayMode--Default--darkMode")
-        disMode[1].style.opacity = "0"
-        disMode[0].style.opacity = "1"
-    })
-
-    disMode[1].addEventListener("click", function () {
-        body[0].classList.remove("darkMode") //background color on body tag
-        disMode[1].style.opacity = "1"
-        disMode[0].style.opacity = "0"
-
-    })
-
-
-
-
-
-
 
 </script>
 
