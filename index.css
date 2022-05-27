@@ -26,7 +26,7 @@ body {
     flex-direction: column; */
     position: relative;
     overflow: hidden;
-    opacity: 0;
+    opacity: 1;
     transition: 2s;
 
     
@@ -120,11 +120,7 @@ main h1 {
 }
 
 
-/* main a:hover {
-    animation-name:btn--hover;
-    animation-duration: .5s;
-    animation-fill-mode: both;
-} */
+
 
 @keyframes btn--hover {
     0% {
@@ -220,6 +216,105 @@ main {
     justify-content: space-around;
 }
 
+.contact-btn  {
+        display: inline-block;
+        position: relative;
+        border: none;
+        text-decoration: none;
+        padding: 0px;
+        width: 100px;
+        height: 54px;
+        font-size: 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        /* color: #F8F7FD; */
+        border: 2px solid #F8F7FD;
+        background-color: transparent;
+}
+
+.contact-btn button:hover {
+    cursor: pointer;
+}
+
+.contact-btn:hover::after {
+    height: 100%;
+}
+
+.contact-btn button::after{
+    border-radius: 10px;
+    bottom:-1;
+    left: -1;
+    content: "";
+    width: 100%;
+    height: 0;
+    background-color: #F8F7FD;
+    position: absolute;
+    z-index: -1;
+    transition: .3s;
+    
+    
+}
+
+.contact-msg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: absolute;
+    right: 40px;
+    top: 225px;
+    background-color: #F8F7FD;
+    color: #232A34;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity .5s;
+    overflow: hidden;
+}
+
+.contact-msg p {
+    margin-bottom: 20px;
+}
+
+.contact-msg button {
+    width: fit-content;
+    padding: 5px;
+    margin: 0 auto;
+    transition: .3s;
+}
+
+.contact-msg button:hover {
+    background-color: #232A34;
+    color: #F8F7FD;
+    border: none;
+    padding: 8px;
+}
+
+.contact-msg * {
+    color: #232A34;
+    font-size: 15px;
+    z-index: 1;
+}
+
+.arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 219px;
+    bottom: 92px;
+    background-color: #F8F7FD;
+    transform: rotateZ(45deg);
+    z-index: -5;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.loadedMsg {
+    opacity: 1;
+}
 
 
 main p {
