@@ -9,6 +9,7 @@
 
 body {
     height: 100vh;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.836);
 }
 
@@ -95,8 +96,6 @@ img {
 }
 
 footer {
-    display: fixed;
-    bottom: 0px;
     background-color: black;
     text-align: center;
 }
@@ -110,4 +109,22 @@ footer a {
 
 footer a:hover {
     color: red;
+}
+
+@media screen and (max-width: 760px) {
+    main {
+        width: 100%;
+    }
+
+    #grid {
+        width: 500px;
+        height: 500px;
+    }
+
+    img {
+        width: 120px;
+        height: 120px;
+    }
+
+
 }
