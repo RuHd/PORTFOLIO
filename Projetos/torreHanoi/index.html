@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Torre de Hanoi</title>
+</head>
+<body>
+    <div id="container">
+        <span class="base"></span>
+        <span class="pole p1"></span>
+        <span class="pole p2"></span>
+        <span class="pole p3"></span>
+        <span class ="disco disc1" draggable="true"></span>
+        <span class ="disco disc2" draggable="true"></span>
+    </div>
+    <script>
+        const disco = document.getElementsByClassName("disco")
+        const pole = document.getElementsByClassName("pole")
+        
+        for (let i = 0; i<disco.length; i++) {
+            disco[i].addEventListener("dragstart",dragStart)
+            disco[i].addEventListener("dragend",dragEnd)
+        }
+
+
+        // Eventos quando os discos são arrastados
+        function dragStart() {
+            setTimeout(()=>this.style.opacity = "0",0)
+        }
+
+        function dragEnd() {
+            this.style.opacity="1"
+        }
+
+        // Inserindo Event Listeners nos Poles
+        for (let i = 0; i<pole.length; i++) {
+            pole[i].addEventListener("dragenter",dragEnter)
+            pole[i].addEventListener("dragleave",dragLeave)
+        }
+
+        function dragEnter() {
+            console.log(dragEvent)
+        }
+
+        function dragLeave() {
+            console.log(event)
+        }
+
+        console.log(event.isTrusted)
+
+
+
+    </script>
+</body>
+</html>

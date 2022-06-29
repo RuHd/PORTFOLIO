@@ -11,15 +11,21 @@
     
     <div id="container">
         <h3> Text Transformer</h3>
-        <p>
-            <input type="text" class="txt" value="" placeholder="Insert Text Here">
-        </p>
         
+        <textarea id="txt" placeholder="insert the text here" cols="50" rows="10"></textarea>
         <section id="btnSection">
             <button id="btnUpper">Convert to Upper Case</button>
             <button id="btnLower">Convert to Lower Case</button>
         </section>
-        <p class="result"></p>
+        <textarea id="result" placeholder="result goes here" readonly cols="60" rows="10"></textarea>
+        <section id="word-section">
+            <div>
+                <span id="letterCount">Nº LETRAS: </span>
+            </div>
+            <div>
+                <span id="wcount">Nº PALAVRAS: </span>
+            </div>     
+        </section>
     </div>
     <p style="color: white; margin-top: 20px;"> Essa aplicação tem como objetivo converter os caracteres de uma 
         string inserida pelo usuário em letras maiúsculas ou minúsculas 
@@ -30,23 +36,70 @@
 <script>
    const btnUpper = document.getElementById("btnUpper")
    const btnLower = document.getElementById("btnLower")
-   const wordCount = document.getElementById("WordCount")
    const textInput = document.getElementById("textInput")
-   const result = document.getElementsByClassName("result")
-   const keyCodes = []
+   const wcount = document.getElementById("wcount")
+   const result = document.getElementById("result")
+   const txt = document.getElementById("txt")
+   const symbols = [" ",".",",",";",":","?","!"]
+   const letterCount = document.getElementById("letterCount")
+   const words = []
    
-   const currentText = []
+   
+   let charCount = 0
+   let wordCount = 0
+ 
+   function countLetter (word) {
+       console.log(word)
+       letterCount.innerText = "Nº LETRAS: "
+      for (let i = 0; i<word.length; i++){
+          for (let j = 0; j<symbols.length; j++) {
+              if (word[i] == symbols[j]) {
+                  charCount-=1
+                  break
+              } 
+          }
+          charCount++
+      }
+
+      letterCount.innerText += " "+ charCount
+      charCount = 0
+      
+   }
+
+   function wordCounter (word) {
+       let teste = word
+       teste
+       wcount.innerText= "Nº PALAVRAS: "
+       let newword = word.split(" ")
+       wcount.innerText += " " + newword.length
+
+   }
   
    btnUpper.addEventListener("click",function(){
-        let txt = document.getElementById("txt").value
-       let upTxt = txt.toUpperCase()  
-       result[0].innerHTML = upTxt      
+        let input = txt.value
+        let upTxt = input.toUpperCase()  
+        result.value = upTxt   
+        countLetter(txt.value)
+        wordCounter(txt.value)
    })
 
    btnLower.addEventListener("click",function(){
-     let txt = document.getElementById("txt").value
-     let upTxt = txt.toLowerCase()  
-     result[0].innerHTML = upTxt
+     let input = txt.value
+     let upTxt = input.toLowerCase()  
+     result.value = upTxt
+     countLetter(txt.value)
+     wordCounter(txt.value)
    })
+
+
+
+// Eliminar os espaços brancos:
+
+//      1- identificar os espaços em brancos
+//          Se o caracter atual for um espaço, delete o caracter
+//          
+//      2- Eliminar os espaços em brancos
+
+   
 </script>
 </html>

@@ -14,7 +14,7 @@
 <body onload = "loadFunction()">
     
     <header>
-        <h1> Desenvolvimento  Web </h1>
+        <h1> Front-end Development </h1>
         <ul>
             <li>
                 <a href="index.html">Home</a>
@@ -25,26 +25,51 @@
         <div class="img-perfil">
             <img src="ruan.jpg" alt=""> 
         </div>
-        <h1>Minha história</h1>
-            <p>
-                Meu nome é Ruan de Aquino Mesquita, tenho 28 anos de idade e um grande 
-                entusiasta da área de Tecnologia, mais especificamente na atividade de
-                desenvolvimento front-end.<br><br>
-
-                Faço curso de Análise e Desenvolvimento de Sistemas, com previsão de término
-                para o final desse ano. 
-
-                Para mais detalhes, abaixe se encontra a opção para o download do meu currículo. 
+        <h1>Minha História</h1>
+            <p id="txtContent">
+                Bem-vindo ao meu Portfólio. Criado com muito carinho e amor s2!
+                Meu nome é Ruan de Aquino Mesquita, tenho 28 anos e sou um grande entusiasta na área de Tecnologia, mais especificamente na atividade de desenvolvimento front-end.
+                Estou fazendo um curso de Análise e Desenvolvimento de Sistemas, com término previsto para o final deste ano.
+                Para mais detalhes, abaixo está a opção de baixar meu currículo.
             </p>
 
-            <a href="Ruan - Currículo (2).docx" class="curriculo" download="Ruan-Currículo">Baixar currículo</a>
+            <a href="Ruan - Currículo (2).docx" class="curriculo" download="Ruan-Currículo">Baixar Currículo</a>
     </main>
+    <div id="btn-container">
+        <button class="translateBtn"> Translate to <span>EN</span> </button>
+    </div>
     <script>
-        const body = document.getElementsByTagName("body")
 
+
+        const body = document.getElementsByTagName("body")
+        const enTxt = "Welcome to my Portfolio. Created with great care and love s2! My name is Ruan de Aquino Mesquita,I'm 28 years old and I'm a big enthusiast in the area of ​​Technology, more specifically in the front-end development activity.I'm taking a Systems Analysis and Development course, scheduled to end by the end of this year.For more details, below is the option to download my resume."
+        const en = " EN"
+        const ptBr = " PT-BR"
+        const btnContent = document.getElementsByClassName("translateBtn")
+        const txtContent = document.getElementById("txtContent")
+        const langOption = btnContent[0].getElementsByTagName("span")
         function loadFunction()  {
             body[0].classList.add("loadTransition")
         }
+
+        alert(body[0].innerHTML[10])
+
+        btnContent[0].addEventListener('click',translate)
+        const BrTxt = txtContent.innerText
+        function translate() {
+           
+            if (txtContent.innerText == enTxt) {
+                this.innerText = "Translate to "
+                this.innerText += en
+                txtContent.innerText = BrTxt
+            } else {
+                this.innerText = "Traduzir para "
+                this.innerText += ptBr
+                txtContent.innerText = enTxt
+            }
+        }
+
+        let txt = body[0].innerText
     </script>
 
 

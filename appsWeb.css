@@ -93,7 +93,7 @@ main {
 
 .app-card p {
     margin-top: 10px;
-    /* text-align: center; */
+    text-align: center;
 }
 
 .app-card img {

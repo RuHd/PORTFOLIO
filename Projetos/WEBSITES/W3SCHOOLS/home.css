@@ -272,9 +272,6 @@ main h2 {
     font-size: 32px;
 }
 
-main section{
-    /* border: 2px solid red; */
-}
 
 .btn--main--container {
     display: flex;
@@ -361,7 +358,6 @@ main section{
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
-    /* height: 350px; */
     padding: 10px 15px;
     background-color: #E7E9EB ;
 }

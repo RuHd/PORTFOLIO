@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,40 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto+Mono:ital,wght@1,300&family=Roboto:ital,wght@1,300&family=Shadows+Into+Light&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/ebc21972aa.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Portfólio Dev Web - Ruan Mesquita</title>
 </head>
-<body >
+<body onload="loadTransition()">
     <main>
         <section class = "text">
             <h1>RUAN MESQUITA</h1>
             <p>
-               
-               
-               Olá, sou Desenvolvedor Web! Aqui você irá encontrar
-               meus contatos e projetos pessoais realizados nas tecnologias
-               HTML, CSS e Javascript. <br><br>
-
-               Seja bem-vindo! <span>:)</span> 
-               
+                Olá, Eu sou Desenvolvedor Front-end" Aqui você encontrará meus contatos e projetos pessoais criados
+                utilizando HTML, CSS e Javascript!
+                <br><br>
+                Seja bem-vindo!<span>:)</span> 
             </p> 
 
             <section class = "btn--options">
                 <a href="sobreMim.html" class = "hireMeBtn">Sobre Mim</a>
                 <a href="pagProjetos.html" class = "portfolioBtn">Projetos</a>
-                <button class = "contact-btn">Contato</button>
-                <span class = "contact-msg">
-                    <h4>Telefone: </h4>
-                    <p>+55 12 98203-9275</p>
-                    <button class="msg-btn">fechar</button>
-                </span>
-                <span class = "arrow"></span>
             </section>
             <section id="icons--socialMedia">
                 <a href="">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/ruanmesquita">
+                <a href="https://linkedin.com/in/ruanmesquita">
                     <i class="fa-brands fa-linkedin"></i>
                 </a>
                 <a href="https://github.com/RuHd">
@@ -58,17 +46,9 @@
     </main>
     <script>
         const body = document.getElementsByTagName("body")
-        const msgBtn = document.getElementsByClassName("msg-btn")
-        const msg = document.getElementsByClassName("contact-msg")
-        const arrow = document.getElementsByClassName("arrow")
-        const contato = document.getElementsByClassName("contact")
-        // function loadTransition(){
-        //     body[0].classList.add("loadTransition")
-        // }
-
-       
-    </script>
-
-    
+        function loadTransition(){
+            body[0].classList.add("loadTransition")
+        }   
+    </script> 
 </body>
 </html>

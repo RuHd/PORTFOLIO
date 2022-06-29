@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&family=Playfair+Display+SC&family=Raleway:wght@100&family=Rubik:wght@300&family=Source+Sans+Pro:wght@200;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border: 0;
+    text-decoration: 0;
+    font-family: 'Raleway', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    width: 100vw;
+    padding: 10px;
+    height: fit-content;
+    overflow-x: hidden;
+    background-color: rgb(34, 33, 33);
+}
+
+h1 {
+    color: white;
+}
+
+#container>span {
+    position: relative;
+    display: flex;
+    border: 1px solid white;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.squares {
+    transition: .3s;
+}
+
+.symbols {
+    position: relative;
+    font-size: 4em;
+    color: aliceblue;
+}
+
+.symbols::after {
+    position: absolute;
+    content: inherit;
+    height: 100%;
+    width: 100%;
+    border: 1px solid green;
+}
+.squares:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+}
+
+.squares:hover .symbols {
+    color: black;
+}
+
+#container {
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    gap: 15px;
+    grid-template-columns: repeat(3,133.3px);
+    grid-template-rows: repeat(3,133.3px);
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 10px;
+    color: aliceblue;
+    font-size: 2em;
+}
+
+a {
+    position: relative;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: aliceblue;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    transition: .3s;
+}
+
+a:hover::after {
+    width: 100%;
+}

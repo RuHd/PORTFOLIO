@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+span {
+    display: inline-block;
+}
+
+body {
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    position: relative;
+    height: 400px;
+    width: 800px;
+    border: 2px solid red;
+}
+
+.base {
+    position: absolute;
+    height: 70px;
+    width: 100%;
+    bottom: 0px;
+    right: 0px;
+    z-index: 2;
+    background-color: brown;
+    border-radius: 5px;
+}
+
+.pole {
+    position: absolute;
+    width: 65px;
+    height: 350px;
+    border-radius: 20px;
+    background-color: rgb(255, 115, 0);
+}
+
+.p1 {
+    left: 80px;
+}
+.p2 {
+  
+    right: 47%;
+}
+
+.p3 {
+    right: 80px;
+}
+
+.disco {
+    position: absolute;
+    z-index: 1;
+    height: 50px;
+    border-radius: 2px;
+}
+
+.disc1 {
+    width: 200px;
+    bottom: 70px;  
+    left: 15px;
+    background-color: cornflowerblue; 
+}
+
+.disc2 {
+    width: 150px;
+    bottom: 120px; 
+    left: 39px;
+    background-color: darkgreen;
+}
+
+.hold {
+    background-color: green
+}

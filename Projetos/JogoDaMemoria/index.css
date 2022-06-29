@@ -8,36 +8,35 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
+    height: fit-content;
     background-color: rgba(0, 0, 0, 0.836);
+    overflow-x: hidden;
 }
 
 .audioPlay {
     position: absolute;
-    /* display: none; */
 }
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 h1 {
     text-align: center;
     color: white;
-    margin-bottom: 20px;
+    transition: font-size .3s;
+    
 }
 
 #grid {
-    width: 832px;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    width: 632px;
     height: 532px;
-    display: flex;
     position: relative;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    /* box-shadow: 1px 1px 5px rgb(226, 214, 214); */
     margin: 0 auto;
     
 }
@@ -47,8 +46,6 @@ h1 {
     margin: 2px;
     width: 200px;
     height: 125px;
-    /* margin: 3px; */
-    /* position: absolute; */
     transform: rotateY(180deg);
 
 }
@@ -66,23 +63,18 @@ h1 {
 img {
     object-fit: fill;
     margin: 2px;
-    width: 200px;
+    width: 145px;
     height: 125px;
     position: relative;
     border-radius: 2%;
     transition: .5s;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.596);
-    /* display: none; */
 }
 
 .turnCard {
     animation-name: cardTurn;
     animation-duration: .5s;
 }
-
-
-
-
 
 .batman-logo {
     content: url("batman-logo3.jpg");
@@ -96,6 +88,7 @@ img {
 }
 
 footer {
+    width: 100%;
     background-color: black;
     text-align: center;
 }
@@ -111,19 +104,32 @@ footer a:hover {
     color: red;
 }
 
-@media screen and (max-width: 760px) {
-    main {
+@media screen and (max-width: 907px) {
+    body {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    h1 {
+        
         width: 100%;
+        text-align: center;
+        font-size: 1.5em;
     }
-
     #grid {
-        width: 500px;
-        height: 500px;
+        width: fit-content;
+        height: 400px;
+    }
+    img {
+        width: 100px;
+        height: 80px;
     }
 
-    img {
-        width: 120px;
-        height: 120px;
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 
 

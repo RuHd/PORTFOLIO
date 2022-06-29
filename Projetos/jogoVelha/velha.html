@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="velha.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tic tac toe</h1>
+    <div id="container">
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+        <span class="squares">
+            <span class="symbols"></span>
+        </span>
+    </div> 
+    <footer>
+        <a href="../../appsWeb.html">Projetos</a>
+        <a href="../../index.html">Home</a>
+    </footer>
+</body>
+<script>
+    const container = document.getElementById("container")
+    const squares = container.getElementsByClassName("squares")
+    const sym = document.getElementsByClassName("symbols")
+    const X = "X"
+    const O = "O"
+
+    const winCondition = [
+        // horizontal
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        //vertical
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        // diagonal
+        [0,4,8],
+        [2,4,6]
+    ]
+
+
+    let a,b,c;
+    let player1 = true
+    let isFilled = false
+    let tieCount = 0
+    let win = false
+
+    function tieChecker() {
+        if (tieCount == 9 && win == false) {
+            tieCount = 0
+            alert("TIEE !!!")
+            for (let i = 0; i<squares.length; i++) {
+                squares[i].style.border = "2px solid red"
+            }
+            setTimeout(()=>document.location.reload(true),1300)
+        }
+        
+    }
+
+    function winChecker (player) {
+        let seq = []
+        for(let i = 0; i<winCondition.length;i++) {
+           a = sym[winCondition[i][0]].innerHTML
+           b = sym[winCondition[i][1]].innerHTML
+           c = sym[winCondition[i][2]].innerHTML
+
+           if ((a == X && b == X && c == X) || (a == O && b == O && c == O)) {
+                win=true
+
+                squares[winCondition[i][0]].style.backgroundColor = "green"
+                squares[winCondition[i][1]].style.backgroundColor = "green"
+                squares[winCondition[i][2]].style.backgroundColor = "green"
+                setTimeout(function(){
+                    if (!player) {alert(`The player ${a} has won !!!`)}
+                    else {alert(`The player ${a} has won !!!`)}
+                    setTimeout(() => document.location.reload(true),1000)
+                })
+                
+           } 
+        }  
+        tieChecker()
+    }
+
+    for (let i = 0; i<squares.length;i++) {
+        squares[i].addEventListener("click",function(){
+                    tieChecker()
+                    if(sym[i].innerHTML == O || sym[i].innerHTML == X) return
+
+                    if(player1) {
+                        sym[i].innerHTML = O
+                        player1 = false
+                    } else {
+                        sym[i].innerHTML = X
+                        player1 = true
+                    }  
+                    tieCount++
+                    console.log(tieCount)
+                    winChecker(player1)   
+        })
+    }
+    
+</script>
+</html>

@@ -67,6 +67,10 @@ header {
 
 }
 
+header h1 {
+    transition: .3s;
+}
+
 
 
 main {
@@ -112,6 +116,30 @@ main p {
 
 .curriculo a:hover {
     background-color: #F8F7FD;
+}
+
+#btn-container {
+    position: fixed;
+    bottom: 0;
+    right: 3px;
+    
+}
+
+.translateBtn {
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+@media screen and (max-width: 750px) {
+
+    header h1 {
+        font-size: 30px;
+        transition: .3s;
+    }
+
+
 }
 
 
