@@ -35,6 +35,10 @@ header {
 
 }
 
+header h2 {
+    transition: .3s;
+}
+
 #menu a::after {
     position: absolute;
     content: "";
@@ -101,4 +105,20 @@ main {
     width: 280px;
     height: 200px;
     object-fit: stretch;
+}
+
+@media screen and (max-width:925px) {
+    header {
+        background-color: black;
+        z-index: 1;
+    }
+    header h2 {
+        font-size: .8em;
+    }
+
+    main {
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
 }

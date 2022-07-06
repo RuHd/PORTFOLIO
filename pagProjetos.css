@@ -45,21 +45,17 @@ header {
     align-items: center;
     justify-content: space-evenly;
     background-color: black;
-    /* border: 2px solid red; */
+    border-bottom: 1px solid; 
     
 }
 
 
-
 header h2 {
-    height: 50px;
     font-size: 30px;
-    margin-top: 15px;
- 
+    transition: .3s;
 }
 
-
-header ul li {
+header a {
     margin-left: 10px;
     list-style: none;
     font-size: 30px;
@@ -75,15 +71,14 @@ header ul li {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0%;
     height: 1px;
     background-color: #F8F7FD;
-    opacity: 0;
-    transition: opacity 300ms ease-in;
+    transition: .3s;
 } 
 
 header a:hover::before {
-    opacity: 1;
+    width: 100%;
 }
 
 
@@ -92,8 +87,6 @@ main {
     padding: 20px;
     width: 100%;
     margin-top: 70px;
-    /* max-height: 500px; */
-    /* border: 2px solid red; */
 }
 
 main h3 {
@@ -101,9 +94,9 @@ main h3 {
 }
 
 #projects--container {
+   display: flex;
    position: relative;
    margin-top: 20px;
-   display: flex;
    flex-wrap: wrap;
    width: 100%;
    justify-content: space-between;
@@ -177,8 +170,12 @@ main h3 {
     }
     
 }
-
-@media screen and (max-width:1238px){
+@media screen and (max-width:600px){
+    header h2 {
+        font-size: 1em
+    }
+}
+@media screen and (max-width:1300px){
     body {
         display: flex;
         flex-direction: column;
@@ -191,8 +188,10 @@ main h3 {
         background-attachment: fixed;
     }
 
+    
+
     main {
-        display: flex;
+
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -205,6 +204,10 @@ main h3 {
         justify-content: center;
         align-items: center;
         gap: 30px;
+    }
+
+    #projects--container a {
+
     }
 
 }
