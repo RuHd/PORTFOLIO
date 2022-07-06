@@ -35,9 +35,6 @@
 
             <a href="Ruan - Currículo (2).docx" class="curriculo" download="Ruan-Currículo">Baixar Currículo</a>
     </main>
-    <div id="btn-container">
-        <button class="translateBtn"> Translate to <span>EN</span> </button>
-    </div>
     <script>
 
 
@@ -52,24 +49,6 @@
             body[0].classList.add("loadTransition")
         }
 
-        alert(body[0].innerHTML[10])
-
-        btnContent[0].addEventListener('click',translate)
-        const BrTxt = txtContent.innerText
-        function translate() {
-           
-            if (txtContent.innerText == enTxt) {
-                this.innerText = "Translate to "
-                this.innerText += en
-                txtContent.innerText = BrTxt
-            } else {
-                this.innerText = "Traduzir para "
-                this.innerText += ptBr
-                txtContent.innerText = enTxt
-            }
-        }
-
-        let txt = body[0].innerText
     </script>
 
 

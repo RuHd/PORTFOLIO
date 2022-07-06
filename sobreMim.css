@@ -58,7 +58,7 @@ header {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 20px;
     background-color: black;
     font-size: 25px;
@@ -134,9 +134,10 @@ main p {
 
 @media screen and (max-width: 750px) {
 
-    header h1 {
-        font-size: 30px;
+    header h2 {
+        font-size: 1em;
         transition: .3s;
+        width: 300px;
     }
 
 
